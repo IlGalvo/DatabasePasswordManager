@@ -27,8 +27,7 @@ namespace DatabasePasswordManager
                     SafeNativeMethods safeNativeMethods = new SafeNativeMethods();
                     Application.AddMessageFilter(safeNativeMethods);
 
-                    // Temp
-                    string updateCheckUrl = ("https://onedrive.live.com/download?resid=7D7FF9DFDA23C644!2368&authkey=!AFcY04VNisbcdlE");
+                    string updateCheckUrl = ("https://onedrive.live.com/download?resid=7D7FF9DFDA23C644!3796&authkey=!AKlHtG1Up2tbstA");
 
                     if (!UpdateManager.CheckForUpdates(updateCheckUrl))
                     {

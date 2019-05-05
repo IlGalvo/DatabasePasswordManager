@@ -156,20 +156,6 @@ namespace DatabasePasswordManager.Main
             }
         }
 
-        private void chekUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            EnableTimerAndSession(false);
-
-            /*if (UpdateForm.CheckForUpdates(new Version(Application.ProductVersion), true) == DialogResult.OK)
-            {
-                EnableTimerAndSession(true);
-            }
-            else
-            {
-                Close();
-            }*/
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();

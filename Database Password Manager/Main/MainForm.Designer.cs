@@ -43,7 +43,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chekUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,7 +170,6 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changePasswordToolStripMenuItem,
             this.createBackupToolStripMenuItem,
-            this.chekUpdatesToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -180,28 +178,21 @@
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // createBackupToolStripMenuItem
             // 
             this.createBackupToolStripMenuItem.Name = "createBackupToolStripMenuItem";
-            this.createBackupToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.createBackupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createBackupToolStripMenuItem.Text = "Create Backup";
             this.createBackupToolStripMenuItem.Click += new System.EventHandler(this.createBackupToolStripMenuItem_Click);
-            // 
-            // chekUpdatesToolStripMenuItem
-            // 
-            this.chekUpdatesToolStripMenuItem.Name = "chekUpdatesToolStripMenuItem";
-            this.chekUpdatesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.chekUpdatesToolStripMenuItem.Text = "Chek Updates";
-            this.chekUpdatesToolStripMenuItem.Click += new System.EventHandler(this.chekUpdatesToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -352,7 +343,6 @@
         private CustomControlCollection.OptimizedFlowLayoutPanel optimizedFlowLayoutPanelGeneralAccount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEmailAccount;
         private CustomControlCollection.OptimizedFlowLayoutPanel optimizedFlowLayoutPanelEmailAccount;
-        private System.Windows.Forms.ToolStripMenuItem chekUpdatesToolStripMenuItem;
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelAutoLock;
         private System.Windows.Forms.Timer timerAutoLock;
