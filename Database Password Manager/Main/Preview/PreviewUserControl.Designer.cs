@@ -32,7 +32,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.toolTipInformation = new System.Windows.Forms.ToolTip(this.components);
-            this.roundedButtonInformation = new DatabasePasswordManager.Main.Preview.RoundedButton();
+            this.roundedButtonInformation = new CustomControlCollection.Buttons.RoundedButton();
             this.SuspendLayout();
             // 
             // panelContainer
@@ -115,6 +115,6 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.ToolTip toolTipInformation;
-        private RoundedButton roundedButtonInformation;
+        private CustomControlCollection.Buttons.RoundedButton roundedButtonInformation;
     }
 }

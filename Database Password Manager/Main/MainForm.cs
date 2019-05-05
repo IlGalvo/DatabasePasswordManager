@@ -1,4 +1,6 @@
-﻿using DatabaseCoreLogic;
+﻿using CustomControlCollection;
+using CustomControlCollection.RichTextBoxes;
+using DatabaseCoreLogic;
 using DatabaseCoreLogic.Account;
 using DatabasePasswordManager.Main.Manager;
 using DatabasePasswordManager.Main.Preview;
@@ -224,30 +226,30 @@ namespace DatabasePasswordManager.Main
         #endregion
 
         #region TEXTBOX_STATUS
-        private void SetTextBoxPlaceholderText(string text)
+        private void SetPlaceholderRichTextBoxText(string text)
         {
-            TextBoxPlaceholder textBoxPlaceholder = null;
+            PlaceholderRichTextBox placeholderRichTextBox = null;
 
             switch (accountType)
             {
                 case AccountType.GeneralAccount:
-                    textBoxPlaceholder = textBoxPlaceholderGeneralAccount;
+                    placeholderRichTextBox = placeholderRichTextBoxGeneralAccount;
                     break;
                 case AccountType.EmailAccount:
-                    textBoxPlaceholder = textBoxPlaceholderEmailAccount;
+                    placeholderRichTextBox = placeholderRichTextBoxEmailAccount;
                     break;
             }
 
-            if (textBoxPlaceholder.InvokeRequired)
+            if (placeholderRichTextBox.InvokeRequired)
             {
-                textBoxPlaceholder.BeginInvoke((MethodInvoker)delegate
+                placeholderRichTextBox.BeginInvoke((MethodInvoker)delegate
                 {
-                    SetTextBoxPlaceholderText(text);
+                    SetPlaceholderRichTextBoxText(text);
                 });
             }
             else
             {
-                textBoxPlaceholder.Text = text;
+                placeholderRichTextBox.Text = text;
             }
         }
         #endregion
@@ -264,11 +266,11 @@ namespace DatabasePasswordManager.Main
 
                 if (speechRecognitionResult.Reason == ResultReason.RecognizedSpeech)
                 {
-                    SetTextBoxPlaceholderText(speechRecognitionResult.Text.Remove(speechRecognitionResult.Text.Length - 1));
+                    SetPlaceholderRichTextBoxText(speechRecognitionResult.Text.Remove(speechRecognitionResult.Text.Length - 1));
                 }
                 else if (speechRecognitionResult.Reason == ResultReason.NoMatch)
                 {
-                    SetTextBoxPlaceholderText(MainUtilities.NoResultsText);
+                    SetPlaceholderRichTextBoxText(MainUtilities.NoResultsText);
                 }
                 else if (speechRecognitionResult.Reason == ResultReason.Canceled)
                 {
@@ -320,7 +322,7 @@ namespace DatabasePasswordManager.Main
         #region SPEECHRECOGNIZER_EVENT
         private void SpeechRecognizer_Recognizing(object sender, SpeechRecognitionEventArgs e)
         {
-            SetTextBoxPlaceholderText(e.Result.Text);
+            SetPlaceholderRichTextBoxText(e.Result.Text);
         }
         #endregion
 
@@ -369,8 +371,8 @@ namespace DatabasePasswordManager.Main
         {
             accountType = (AccountType)Enum.Parse(typeof(AccountType), ((TabControl)sender).SelectedTab.Name.Remove(0, 7));
 
-            textBoxPlaceholderGeneralAccount.Visible = (!textBoxPlaceholderGeneralAccount.Visible);
-            textBoxPlaceholderEmailAccount.Visible = (!textBoxPlaceholderEmailAccount.Visible);
+            placeholderRichTextBoxGeneralAccount.Visible = (!placeholderRichTextBoxGeneralAccount.Visible);
+            placeholderRichTextBoxEmailAccount.Visible = (!placeholderRichTextBoxEmailAccount.Visible);
         }
         #endregion
 
@@ -379,9 +381,9 @@ namespace DatabasePasswordManager.Main
         {
             try
             {
-                GeneralAccount[] generalAccountList = coreLogic.QuerySearchGeneralAccountData(textBoxPlaceholderGeneralAccount.Text);
+                GeneralAccount[] generalAccountList = coreLogic.QuerySearchGeneralAccountData(placeholderRichTextBoxGeneralAccount.Text);
 
-                ManageFixedFlowLayoutPanelAccount(fixedFlowLayoutPanelGeneralAccount, generalAccountList);
+                ManageFixedFlowLayoutPanelAccount(optimizedFlowLayoutPanelGeneralAccount, generalAccountList);
             }
             catch (CoreLogicException coreLogicException)
             {
@@ -397,9 +399,9 @@ namespace DatabasePasswordManager.Main
         {
             try
             {
-                EmailAccount[] emailAccountList = coreLogic.QuerySearchEmailAccountData(textBoxPlaceholderEmailAccount.Text);
+                EmailAccount[] emailAccountList = coreLogic.QuerySearchEmailAccountData(placeholderRichTextBoxEmailAccount.Text);
 
-                ManageFixedFlowLayoutPanelAccount(fixedFlowLayoutPanelEmailAccount, emailAccountList);
+                ManageFixedFlowLayoutPanelAccount(optimizedFlowLayoutPanelEmailAccount, emailAccountList);
             }
             catch (CoreLogicException coreLogicException)
             {
@@ -411,7 +413,7 @@ namespace DatabasePasswordManager.Main
             }
         }
 
-        private void ManageFixedFlowLayoutPanelAccount(FixedFlowLayoutPanel fixedFlowLayoutPanelAccount, Array accountList)
+        private void ManageFixedFlowLayoutPanelAccount(OptimizedFlowLayoutPanel fixedFlowLayoutPanelAccount, Array accountList)
         {
             PreviewUserControl[] previewUserControlList = new PreviewUserControl[accountList.Length];
 

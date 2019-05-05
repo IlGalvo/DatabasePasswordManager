@@ -35,10 +35,10 @@
             this.tabControlAccount = new System.Windows.Forms.TabControl();
             this.tabPageGeneralAccount = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelGeneralAccount = new System.Windows.Forms.TableLayoutPanel();
-            this.fixedFlowLayoutPanelGeneralAccount = new DatabasePasswordManager.Main.FixedFlowLayoutPanel();
+            this.optimizedFlowLayoutPanelGeneralAccount = new CustomControlCollection.OptimizedFlowLayoutPanel();
             this.tabPageEmailAccount = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelEmailAccount = new System.Windows.Forms.TableLayoutPanel();
-            this.fixedFlowLayoutPanelEmailAccount = new DatabasePasswordManager.Main.FixedFlowLayoutPanel();
+            this.optimizedFlowLayoutPanelEmailAccount = new CustomControlCollection.OptimizedFlowLayoutPanel();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +51,8 @@
             this.labelError = new System.Windows.Forms.Label();
             this.labelAutoLock = new System.Windows.Forms.Label();
             this.timerAutoLock = new System.Windows.Forms.Timer(this.components);
-            this.textBoxPlaceholderGeneralAccount = new DatabasePasswordManager.Main.TextBoxPlaceholder();
-            this.textBoxPlaceholderEmailAccount = new DatabasePasswordManager.Main.TextBoxPlaceholder();
+            this.placeholderRichTextBoxGeneralAccount = new CustomControlCollection.RichTextBoxes.PlaceholderRichTextBox();
+            this.placeholderRichTextBoxEmailAccount = new CustomControlCollection.RichTextBoxes.PlaceholderRichTextBox();
             this.tabControlAccount.SuspendLayout();
             this.tabPageGeneralAccount.SuspendLayout();
             this.tableLayoutPanelGeneralAccount.SuspendLayout();
@@ -93,7 +93,7 @@
             this.tableLayoutPanelGeneralAccount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.1F));
             this.tableLayoutPanelGeneralAccount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.8F));
             this.tableLayoutPanelGeneralAccount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.1F));
-            this.tableLayoutPanelGeneralAccount.Controls.Add(this.fixedFlowLayoutPanelGeneralAccount, 1, 0);
+            this.tableLayoutPanelGeneralAccount.Controls.Add(this.optimizedFlowLayoutPanelGeneralAccount, 1, 0);
             this.tableLayoutPanelGeneralAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelGeneralAccount.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelGeneralAccount.Name = "tableLayoutPanelGeneralAccount";
@@ -103,16 +103,16 @@
             this.tableLayoutPanelGeneralAccount.TabIndex = 0;
             this.tableLayoutPanelGeneralAccount.Click += new System.EventHandler(this.MainForm_Click);
             // 
-            // fixedFlowLayoutPanelGeneralAccount
+            // optimizedFlowLayoutPanelGeneralAccount
             // 
-            this.fixedFlowLayoutPanelGeneralAccount.AutoScroll = true;
-            this.fixedFlowLayoutPanelGeneralAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fixedFlowLayoutPanelGeneralAccount.Location = new System.Drawing.Point(62, 3);
-            this.fixedFlowLayoutPanelGeneralAccount.Name = "fixedFlowLayoutPanelGeneralAccount";
-            this.fixedFlowLayoutPanelGeneralAccount.Size = new System.Drawing.Size(533, 408);
-            this.fixedFlowLayoutPanelGeneralAccount.TabIndex = 0;
-            this.fixedFlowLayoutPanelGeneralAccount.Click += new System.EventHandler(this.MainForm_Click);
-            this.fixedFlowLayoutPanelGeneralAccount.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanelAccounts_ControlRemoved);
+            this.optimizedFlowLayoutPanelGeneralAccount.AutoScroll = true;
+            this.optimizedFlowLayoutPanelGeneralAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.optimizedFlowLayoutPanelGeneralAccount.Location = new System.Drawing.Point(62, 3);
+            this.optimizedFlowLayoutPanelGeneralAccount.Name = "optimizedFlowLayoutPanelGeneralAccount";
+            this.optimizedFlowLayoutPanelGeneralAccount.Size = new System.Drawing.Size(533, 408);
+            this.optimizedFlowLayoutPanelGeneralAccount.TabIndex = 0;
+            this.optimizedFlowLayoutPanelGeneralAccount.Click += new System.EventHandler(this.MainForm_Click);
+            this.optimizedFlowLayoutPanelGeneralAccount.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanelAccounts_ControlRemoved);
             // 
             // tabPageEmailAccount
             // 
@@ -132,7 +132,7 @@
             this.tableLayoutPanelEmailAccount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.1F));
             this.tableLayoutPanelEmailAccount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.8F));
             this.tableLayoutPanelEmailAccount.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.1F));
-            this.tableLayoutPanelEmailAccount.Controls.Add(this.fixedFlowLayoutPanelEmailAccount, 1, 0);
+            this.tableLayoutPanelEmailAccount.Controls.Add(this.optimizedFlowLayoutPanelEmailAccount, 1, 0);
             this.tableLayoutPanelEmailAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelEmailAccount.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelEmailAccount.Name = "tableLayoutPanelEmailAccount";
@@ -142,16 +142,16 @@
             this.tableLayoutPanelEmailAccount.TabIndex = 0;
             this.tableLayoutPanelEmailAccount.Click += new System.EventHandler(this.MainForm_Click);
             // 
-            // fixedFlowLayoutPanelEmailAccount
+            // optimizedFlowLayoutPanelEmailAccount
             // 
-            this.fixedFlowLayoutPanelEmailAccount.AutoScroll = true;
-            this.fixedFlowLayoutPanelEmailAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fixedFlowLayoutPanelEmailAccount.Location = new System.Drawing.Point(62, 3);
-            this.fixedFlowLayoutPanelEmailAccount.Name = "fixedFlowLayoutPanelEmailAccount";
-            this.fixedFlowLayoutPanelEmailAccount.Size = new System.Drawing.Size(533, 408);
-            this.fixedFlowLayoutPanelEmailAccount.TabIndex = 0;
-            this.fixedFlowLayoutPanelEmailAccount.Click += new System.EventHandler(this.MainForm_Click);
-            this.fixedFlowLayoutPanelEmailAccount.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanelAccounts_ControlRemoved);
+            this.optimizedFlowLayoutPanelEmailAccount.AutoScroll = true;
+            this.optimizedFlowLayoutPanelEmailAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.optimizedFlowLayoutPanelEmailAccount.Location = new System.Drawing.Point(62, 3);
+            this.optimizedFlowLayoutPanelEmailAccount.Name = "optimizedFlowLayoutPanelEmailAccount";
+            this.optimizedFlowLayoutPanelEmailAccount.Size = new System.Drawing.Size(533, 408);
+            this.optimizedFlowLayoutPanelEmailAccount.TabIndex = 0;
+            this.optimizedFlowLayoutPanelEmailAccount.Click += new System.EventHandler(this.MainForm_Click);
+            this.optimizedFlowLayoutPanelEmailAccount.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanelAccounts_ControlRemoved);
             // 
             // menuStrip
             // 
@@ -227,9 +227,9 @@
             this.buttonMicrophoneSearch.BackgroundImage = global::DatabasePasswordManager.Properties.Resources.Microphone;
             this.buttonMicrophoneSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonMicrophoneSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMicrophoneSearch.Location = new System.Drawing.Point(239, 29);
+            this.buttonMicrophoneSearch.Location = new System.Drawing.Point(239, 26);
             this.buttonMicrophoneSearch.Name = "buttonMicrophoneSearch";
-            this.buttonMicrophoneSearch.Size = new System.Drawing.Size(29, 24);
+            this.buttonMicrophoneSearch.Size = new System.Drawing.Size(29, 26);
             this.buttonMicrophoneSearch.TabIndex = 2;
             this.buttonMicrophoneSearch.UseVisualStyleBackColor = false;
             this.buttonMicrophoneSearch.Click += new System.EventHandler(this.buttonMicrophoneSearch_ClickAsync);
@@ -242,7 +242,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.labelError.AutoSize = true;
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(274, 32);
+            this.labelError.Location = new System.Drawing.Point(274, 30);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(46, 18);
             this.labelError.TabIndex = 3;
@@ -264,34 +264,39 @@
             this.timerAutoLock.Interval = 1000;
             this.timerAutoLock.Tick += new System.EventHandler(this.timerAutoLock_Tick);
             // 
-            // textBoxPlaceholderGeneralAccount
+            // placeholderRichTextBoxGeneralAccount
             // 
-            this.textBoxPlaceholderGeneralAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.placeholderRichTextBoxGeneralAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxPlaceholderGeneralAccount.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPlaceholderGeneralAccount.Location = new System.Drawing.Point(12, 29);
-            this.textBoxPlaceholderGeneralAccount.MaxLength = 32;
-            this.textBoxPlaceholderGeneralAccount.Name = "textBoxPlaceholderGeneralAccount";
-            this.textBoxPlaceholderGeneralAccount.PlaceholderText = "Search...";
-            this.textBoxPlaceholderGeneralAccount.PlaceholerFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPlaceholderGeneralAccount.Size = new System.Drawing.Size(228, 24);
-            this.textBoxPlaceholderGeneralAccount.TabIndex = 1;
-            this.textBoxPlaceholderGeneralAccount.TextChanged += new System.EventHandler(this.textBoxPlaceholder_TextChanged);
+            this.placeholderRichTextBoxGeneralAccount.AutoWordSelection = true;
+            this.placeholderRichTextBoxGeneralAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.placeholderRichTextBoxGeneralAccount.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.placeholderRichTextBoxGeneralAccount.Location = new System.Drawing.Point(12, 26);
+            this.placeholderRichTextBoxGeneralAccount.MaxLength = 32;
+            this.placeholderRichTextBoxGeneralAccount.Multiline = false;
+            this.placeholderRichTextBoxGeneralAccount.Name = "placeholderRichTextBoxGeneralAccount";
+            this.placeholderRichTextBoxGeneralAccount.PlaceholderText = "Search...";
+            this.placeholderRichTextBoxGeneralAccount.PlaceholerFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.placeholderRichTextBoxGeneralAccount.Size = new System.Drawing.Size(228, 27);
+            this.placeholderRichTextBoxGeneralAccount.TabIndex = 1;
+            this.placeholderRichTextBoxGeneralAccount.Text = "";
+            this.placeholderRichTextBoxGeneralAccount.TextChanged += new System.EventHandler(this.textBoxPlaceholder_TextChanged);
             // 
-            // textBoxPlaceholderEmailAccount
+            // placeholderRichTextBoxEmailAccount
             // 
-            this.textBoxPlaceholderEmailAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.placeholderRichTextBoxEmailAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxPlaceholderEmailAccount.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxPlaceholderEmailAccount.Location = new System.Drawing.Point(12, 29);
-            this.textBoxPlaceholderEmailAccount.MaxLength = 32;
-            this.textBoxPlaceholderEmailAccount.Name = "textBoxPlaceholderEmailAccount";
-            this.textBoxPlaceholderEmailAccount.PlaceholderText = "Search...";
-            this.textBoxPlaceholderEmailAccount.PlaceholerFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPlaceholderEmailAccount.Size = new System.Drawing.Size(228, 24);
-            this.textBoxPlaceholderEmailAccount.TabIndex = 1;
-            this.textBoxPlaceholderEmailAccount.Visible = false;
-            this.textBoxPlaceholderEmailAccount.TextChanged += new System.EventHandler(this.textBoxPlaceholder_TextChanged);
+            this.placeholderRichTextBoxEmailAccount.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.placeholderRichTextBoxEmailAccount.Location = new System.Drawing.Point(12, 29);
+            this.placeholderRichTextBoxEmailAccount.MaxLength = 32;
+            this.placeholderRichTextBoxEmailAccount.Name = "placeholderRichTextBoxEmailAccount";
+            this.placeholderRichTextBoxEmailAccount.PlaceholderText = "Search...";
+            this.placeholderRichTextBoxEmailAccount.PlaceholerFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.placeholderRichTextBoxEmailAccount.Size = new System.Drawing.Size(228, 24);
+            this.placeholderRichTextBoxEmailAccount.TabIndex = 1;
+            this.placeholderRichTextBoxEmailAccount.Text = "";
+            this.placeholderRichTextBoxEmailAccount.Visible = false;
+            this.placeholderRichTextBoxEmailAccount.TextChanged += new System.EventHandler(this.textBoxPlaceholder_TextChanged);
             // 
             // MainForm
             // 
@@ -300,11 +305,11 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(697, 538);
-            this.Controls.Add(this.textBoxPlaceholderGeneralAccount);
+            this.Controls.Add(this.buttonMicrophoneSearch);
+            this.Controls.Add(this.placeholderRichTextBoxGeneralAccount);
             this.Controls.Add(this.labelAutoLock);
             this.Controls.Add(this.labelError);
-            this.Controls.Add(this.buttonMicrophoneSearch);
-            this.Controls.Add(this.textBoxPlaceholderEmailAccount);
+            this.Controls.Add(this.placeholderRichTextBoxEmailAccount);
             this.Controls.Add(this.tabControlAccount);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -341,17 +346,17 @@
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createBackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem;
-        private TextBoxPlaceholder textBoxPlaceholderEmailAccount;
+        private CustomControlCollection.RichTextBoxes.PlaceholderRichTextBox placeholderRichTextBoxEmailAccount;
         private System.Windows.Forms.Button buttonMicrophoneSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGeneralAccount;
-        private FixedFlowLayoutPanel fixedFlowLayoutPanelGeneralAccount;
+        private CustomControlCollection.OptimizedFlowLayoutPanel optimizedFlowLayoutPanelGeneralAccount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelEmailAccount;
-        private FixedFlowLayoutPanel fixedFlowLayoutPanelEmailAccount;
+        private CustomControlCollection.OptimizedFlowLayoutPanel optimizedFlowLayoutPanelEmailAccount;
         private System.Windows.Forms.ToolStripMenuItem chekUpdatesToolStripMenuItem;
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelAutoLock;
         private System.Windows.Forms.Timer timerAutoLock;
-        private TextBoxPlaceholder textBoxPlaceholderGeneralAccount;
+        private CustomControlCollection.RichTextBoxes.PlaceholderRichTextBox placeholderRichTextBoxGeneralAccount;
     }
 }
 
